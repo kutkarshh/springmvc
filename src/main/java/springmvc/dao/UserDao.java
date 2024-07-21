@@ -31,6 +31,14 @@ public class UserDao {
 	}
 
 	@Transactional
+	public User getUser(long id) {
+		// return (User) session.get(User.class, id);
+		Session session = sessionFactory.getCurrentSession();
+		User user = session.get(User.class, id);
+		return user;
+	}
+
+	@Transactional
 	public long saveUser(User user) {
 		Session session = sessionFactory.getCurrentSession();
 		long id = (long) session.save(user);

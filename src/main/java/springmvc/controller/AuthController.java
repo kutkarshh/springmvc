@@ -10,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -28,12 +30,27 @@ public class AuthController {
 	private boolean showError = false;
 	private boolean userCreated = false;
 
+	@RequestMapping("/user/{userId}")
+	public String user(@PathVariable("userId") long id, Model model) {
+		model.addAttribute("userId", id);
+		User user = userService.getUserDetails(id);
+		model.addAttribute("name", "Utkarsh Kumar");
+		if (user == null) {
+			return "redirect:/home";
+		}
+		System.out.println(user);
+		model.addAttribute("user", user);
+		return "user_profile";
+	}
+
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String search(Model model) {
 		model.addAttribute("user", new User());
 		model.addAttribute("name", "Utkarsh Kumar");
 		model.addAttribute("showError", showError);
 		model.addAttribute("userCreated", userCreated);
+//		String ss = null;
+//		System.out.println(ss.length());
 		System.out.println(userCreated);
 		return "signup";
 	}
@@ -78,6 +95,11 @@ public class AuthController {
 			}
 			return "signup";
 		}
+	}
+
+	@ExceptionHandler({ NullPointerException.class, NumberFormatException.class })
+	public String exceptionHandlerAllError() {
+		return "error_page";
 	}
 
 }

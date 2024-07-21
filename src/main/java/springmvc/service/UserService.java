@@ -23,6 +23,11 @@ public class UserService {
 		return this.userDao.saveFeedBack(feedback);
 	}
 
+	// call getUser() Method of UserDao class to get the user
+	public User getUserDetails(long id) {
+		return this.userDao.getUser(id);
+	}
+
 	// call saveUser() Method of UserDao class to create a new user
 	public long createUser(User user) {
 

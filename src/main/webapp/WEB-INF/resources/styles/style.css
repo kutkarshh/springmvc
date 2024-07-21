@@ -300,3 +300,11 @@ body {
 .carousel-control-next-icon:before {
 	content: '\f054'; /* right arrow icon */
 }
+
+/* CSS FOR ERROR PAGE */
+.buttonGroup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
