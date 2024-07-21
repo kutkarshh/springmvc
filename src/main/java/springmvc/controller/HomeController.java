@@ -15,7 +15,6 @@ public class HomeController {
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
 	public ModelAndView home() {
 		System.out.println("You are on Home Page");
-
 		Map<String, String> skills = new HashMap<>();
 		skills.put("HTML5", "Building semantic and accessible websites with the latest HTML5 standards.");
 		skills.put("CSS3", "Creating visually stunning and responsive designs with CSS3.");

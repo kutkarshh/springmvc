@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,7 +50,7 @@ public class AuthController {
 		model.addAttribute("userCreated", userCreated);
 //		String ss = null;
 //		System.out.println(ss.length());
-		System.out.println(userCreated);
+//		System.out.println(userCreated);
 		return "signup";
 	}
 
@@ -97,9 +96,18 @@ public class AuthController {
 		}
 	}
 
-	@ExceptionHandler({ NullPointerException.class, NumberFormatException.class })
-	public String exceptionHandlerAllError() {
-		return "error_page";
-	}
+//	// for handling NullPointer and NumberFormatException
+//	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR) // used to send the error status code like 500
+//	@ExceptionHandler({ NullPointerException.class, NumberFormatException.class })
+//	public String exceptionHandlerAllError() {
+//		return "error_page";
+//	}
+//
+//	// for Handling Exception of generic type means any type of exception
+//	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR) // used to send the error status code like 500
+//	@ExceptionHandler(value = { Exception.class })
+//	public String exceptionHandlerGeneric() {
+//		return "error_page";
+//	}
 
 }
