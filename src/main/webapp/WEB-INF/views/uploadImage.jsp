@@ -8,10 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<%
-String name = (String) request.getAttribute("name");
-%>
-<title>Gallery - <%=name%></title>
+
+<title>Gallery - ${name}</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -21,13 +19,11 @@ String name = (String) request.getAttribute("name");
 <!-- Your custom CSS file -->
 <link rel="stylesheet"
 	href="<c:url value="resources/styles/style.css"/>">
-<c:if test="${imageUploaded}">
-	<script src="<c:url value="resources/js/uploadScript.js"/>"></script>
-</c:if>
+<script src="<c:url value="resources/js/uploadScript.js"/>"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="/springmvc/home"><%=name%></a>
+		<a class="navbar-brand" href="/springmvc/home">${name}</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -78,6 +74,9 @@ String name = (String) request.getAttribute("name");
 			<h2 class="display-5">Upload Image</h2>
 			<form action="/springmvc/upload" method="post"
 				enctype="multipart/form-data">
+				<c:if test="${imageUploaded eq true}">
+					<input type="hidden" id="imageUploaded" value="${imageUploaded}">
+				</c:if>
 				<div class="form-group">
 					<label for="url">Select Image:</label> <input type="file"
 						name="url" id="url" required>
@@ -92,10 +91,7 @@ String name = (String) request.getAttribute("name");
 	</div>
 	<footer class="footer">
 		<div class="container">
-			<p>
-				&copy; 2023
-				<%=name%>. All rights reserved.
-			</p>
+			<p>&copy; 2023 ${name}. All rights reserved.</p>
 		</div>
 	</footer>
 </body>

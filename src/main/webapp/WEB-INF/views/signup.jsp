@@ -15,7 +15,9 @@
 <link rel="stylesheet"
 	href="<c:url value="resources/styles/style.css"/>">
 <c:if test="${userCreated}">
-	<script src="<c:url value="resources/js/script.js"/>"></script>
+	<script>
+		alert("User Created successfully!");
+	</script>
 </c:if>
 </head>
 <body>
@@ -179,12 +181,13 @@
 							</ol>
 						</div>
 					</c:if>
+
 				</form:form>
 
 			</div>
 		</div>
 	</div>
-
+	<%-- 	<input type="hidden" id="userCreated" value="${userCreated}"> --%>
 	<footer class="footer">
 		<div class="container">
 			<p>&copy; 2023 ${name}. All rights reserved.</p>

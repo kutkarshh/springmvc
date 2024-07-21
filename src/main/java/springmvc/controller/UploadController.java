@@ -41,6 +41,7 @@ public class UploadController {
 	@RequestMapping(value = "/gallery", method = RequestMethod.GET)
 	public String showGallery(Model model) {
 		model.addAttribute("name", "Utkarsh Kumar");
+		model.addAttribute("imageUploaded", imageUploaded);
 		return "uploadImage";
 	}
 
@@ -77,11 +78,11 @@ public class UploadController {
 			} catch (IOException e) {
 				System.out.println("Error writing file: " + e.getMessage());
 			}
-
+			imageUploaded = true;
+			model.addAttribute("imageUploaded", imageUploaded);
+			System.out.println(imageUploaded);
 			userService.uploadImage(image);
 			System.out.println("File uploaded in db successfully");
-
-			model.addAttribute("imageUploaded", imageUploaded);
 
 		} catch (SQLException e) {
 			e.printStackTrace();

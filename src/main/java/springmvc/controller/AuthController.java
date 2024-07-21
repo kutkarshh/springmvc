@@ -26,7 +26,6 @@ public class AuthController {
 	List<ObjectError> allErrors;
 
 	private boolean showError = false;
-	private boolean showPassword = false;
 	private boolean userCreated = false;
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -34,7 +33,8 @@ public class AuthController {
 		model.addAttribute("user", new User());
 		model.addAttribute("name", "Utkarsh Kumar");
 		model.addAttribute("showError", showError);
-		model.addAttribute("showPassword", showPassword);
+		model.addAttribute("userCreated", userCreated);
+		System.out.println(userCreated);
 		return "signup";
 	}
 
@@ -61,6 +61,8 @@ public class AuthController {
 				if (response > 0) {
 					userCreated = true;
 					model.addAttribute("userCreated", userCreated);
+					System.out.println(userCreated);
+					return "redirect:/home";
 				} else {
 					model.addAttribute("error", "User creation failed");
 					return "signup";
