@@ -59,7 +59,7 @@ This repository contains a Spring MVC web application designed to provide a user
   ![Home Page](https://res.cloudinary.com/kutkarsh/image/upload/v1721676111/springmvc/homepage.png)
 
 - **About Page**:
-  ![About Page](https://res.cloudinary.com/kutkarsh/image/upload/v1721676111/springmvc/aboutus.png)
+  ![About Page]((https://res.cloudinary.com/kutkarsh/image/upload/v1721676889/springmvc/aboutus.png))
 
 - **Contact Us Page**:
   ![Contact Us Page](https://res.cloudinary.com/kutkarsh/image/upload/v1721676111/springmvc/contact_us.png)
