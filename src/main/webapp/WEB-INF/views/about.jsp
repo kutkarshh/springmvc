@@ -103,7 +103,8 @@ String name = (String) request.getAttribute("name");
 								alt="Web Design" class="img-fluid active-image">
 						</div>
 						<div class="col-md-4">
-							<img src="https://via.placeholder.com/1600x900"
+							<img
+								src="https://res.cloudinary.com/kutkarsh/image/upload/v1690313482/samples/imagecon-group.jpg"
 								alt="Software Development" class="img-fluid">
 						</div>
 					</div>
@@ -111,15 +112,18 @@ String name = (String) request.getAttribute("name");
 				<div class="carousel-item">
 					<div class="row">
 						<div class="col-md-4">
-							<img src="https://via.placeholder.com/1600x900"
+							<img
+								src="https://res.cloudinary.com/kutkarsh/image/upload/v1690313504/cld-sample-4.jpg"
 								alt="Digital Marketing" class="img-fluid">
 						</div>
 						<div class="col-md-4">
-							<img src="https://via.placeholder.com/1600x900" alt="SEO"
-								class="img-fluid active-image">
+							<img
+								src="https://res.cloudinary.com/kutkarsh/image/upload/v1690313503/cld-sample-3.jpg"
+								alt="SEO" class="img-fluid active-image">
 						</div>
 						<div class="col-md-4">
-							<img src="https://via.placeholder.com/1600x900"
+							<img
+								src="https://res.cloudinary.com/kutkarsh/image/upload/v1690313502/cld-sample.jpg"
 								alt="Social Media" class="img-fluid">
 						</div>
 					</div>
@@ -132,7 +136,8 @@ String name = (String) request.getAttribute("name");
 								alt="Cyber Security" class="img-fluid">
 						</div>
 						<div class="col-md-4">
-							<img src="https://via.placeholder.com/1600x900"
+							<img
+								src="https://res.cloudinary.com/kutkarsh/image/upload/v1698496104/upload/exbgmzwjxldfh35kcxf7.png"
 								alt="Network Security" class="img-fluid active-image">
 						</div>
 						<div class="col-md-4">
