@@ -91,4 +91,12 @@ http://www.springframework.org/schema/util/spring-util.xsd
 	<bean name="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
+	<!-- For Implementing Interceptor Configuration below -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/inter/interForm" />
+			<bean class="springmvc.helper.MyInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 </beans>
